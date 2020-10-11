@@ -45,7 +45,7 @@ class Game {
     form.hide();
     
     Player.getPlayerInfo();
-    
+    player.getcarsatend();
     if(allPlayers !== undefined){
       background("brown");
       
@@ -88,6 +88,8 @@ class Game {
 
     if(player.distance>3650){
       gameState=2;
+      player.rank=player.rank+1;
+      Player.updatecarsatend(player.rank);
     }
 
     drawSprites();
@@ -96,6 +98,7 @@ class Game {
   
     end(){
       console.log("game ended");
+      console.log(player.rank);
     }
 
   
